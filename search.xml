@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>hexo命令教程</title>
+      <link href="/2022/12/09/hexo%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/"/>
+      <url>/2022/12/09/hexo%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="清除缓存文件"><a href="#清除缓存文件" class="headerlink" title="清除缓存文件"></a>清除缓存文件</h1><ul><li>hexo clean</li></ul><h1 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h1><ul><li>hexo generate(一般简写成hexo g即可)</li></ul><h1 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h1><ul><li>hexo deploy(一般简写成hexo d即可)</li></ul><h1 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h1><ul><li><p>hexo server 命令用于启动本地服务器(一般可以简写成hexo s)</p></li><li><p>可以加一些参数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-p 选项：指定服务器端口，默认为4000</span><br><span class="line">-i 选项：指定服务器IP地址，默认为0,0,0,0</span><br><span class="line">-s 静态模式,仅提供public文件夹中的文件并禁用文件监视</span><br></pre></td></tr></table></figure></li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul><li>如果想你的本地端更新到github</li></ul><ol><li>一般先hexo clean</li><li>然后hexo g</li><li>最后hexo d</li><li>你的浏览器才可以成功更新到github那里</li></ol><ul><li>但是平时一般测试的话，只需要hexo s即可，但是最后的最后别忘了上面那一步！！！</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>postName2</title>
       <link href="/2022/12/09/postName2/"/>
       <url>/2022/12/09/postName2/</url>
@@ -49,6 +68,12 @@
         <content type="html"><![CDATA[<h2 id="这是第一篇文章"><a href="#这是第一篇文章" class="headerlink" title="这是第一篇文章"></a>这是第一篇文章</h2><p>请问你的梦想是什么？</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> spring </tag>
+            
+        </tags>
       
     </entry>
     
