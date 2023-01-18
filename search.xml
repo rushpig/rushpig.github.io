@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>MySQL技术内幕InnoDB存储引擎读书笔记</title>
+      <link href="/2023/01/19/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <url>/2023/01/19/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>一 数据库架构</p><p>MySql数据库定义</p><p>​MySql数据库由后台线程以及一个共享内存区组成。共享内存可以被允许的后台线程所共享。需要牢记的是，数据库实例才是真正用于操作数据库文件的。</p><p>MySql的体系结构</p><p><img src="file:///C:\Users\xie\AppData\Local\Temp\ksohtml8328\wps1.jpg" alt="img"> </p><p>由图知，MySQL由以下几部分组成</p><p>\1. 连接池组件</p><p>\2. 管理服务和工具组件</p><p>\3. SQL接口组件</p><p>\4. 查询分析器组件</p><p>\5. 优化器组件</p><p>\6. 缓冲（Cache）组件</p><p>\7. 插件式存储引擎</p><p>\8. 物理文件</p><p>注：MySQL数据库区别于其他数据库的最重要的一个特点就是其插件式的表存储引擎。存储引擎是基于表的，而不是数据库。</p><p>二 数据库连接</p><p>注：通过TCP&#x2F;IP连接到MySQL实例时，MySQL数据库会先检查一张权限视图，用来判断发起请求的客户端IP是否允许连接到MySQL实例。（这里有前面的实例和集群，不是很懂）</p><p>三 InnoDB体系架构</p><p><img src="file:///C:\Users\xie\AppData\Local\Temp\ksohtml8328\wps2.jpg" alt="img"> </p><p>如图，InnoDB存储引擎有多个内存块，可以认为这些内存块组成了一个大的内存池，负责以下工作：</p><p>\1. 维护所有进程&#x2F;线程需要访问的多个内部数据结构。</p><p>\2. 缓存磁盘上的数据，方便快速地读取，同时在对磁盘文件的数据修改之前在这里缓存。</p><p>\3. 重写日志（redo log）缓冲。</p><p>后台线程的主要作用：</p><p>\1. 负责刷新内存池中的数据，保证缓冲池中的内存缓存的是最新的数据</p><p>\2. 此外将已修改的数据文件刷新到磁盘文件，同时保证在数据库发生异常的情况下InnoDB能恢复到正常运行状态。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> InnoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HashMap和HashSet经常用的api</title>
       <link href="/2023/01/18/HashMap%E5%B8%B8%E7%94%A8api%E5%92%8C%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F/"/>
       <url>/2023/01/18/HashMap%E5%B8%B8%E7%94%A8api%E5%92%8C%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F/</url>
@@ -80,25 +99,6 @@
     
     
     <entry>
-      <title>字节青训营_后端专场</title>
-      <link href="/2023/01/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E8%AE%AD%E7%BB%83%E8%90%A5_day1/"/>
-      <url>/2023/01/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E8%AE%AD%E7%BB%83%E8%90%A5_day1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 字节跳动 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>代码随想录训练营_day2</title>
       <link href="/2023/01/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E8%AE%AD%E7%BB%83%E8%90%A5_day2/"/>
       <url>/2023/01/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E8%AE%AD%E7%BB%83%E8%90%A5_day2/</url>
@@ -118,11 +118,30 @@
     
     
     <entry>
-      <title>实习碎碎念__jvm影响性能</title>
+      <title>字节青训营_后端专场</title>
+      <link href="/2023/01/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E8%AE%AD%E7%BB%83%E8%90%A5_day1/"/>
+      <url>/2023/01/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E8%AE%AD%E7%BB%83%E8%90%A5_day1/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 字节跳动 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>实习碎碎念__jvm对性能的影响</title>
       <link href="/2023/01/12/%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%861/"/>
       <url>/2023/01/12/%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%861/</url>
       
-        <content type="html"><![CDATA[<p>&#x2F;&#x2F;还有啥内存泄漏</p>]]></content>
+        <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       
       
       
